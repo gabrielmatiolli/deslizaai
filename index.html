@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeSlope - Sistema de Alerta</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #2563eb;
+        --color-secondary: #16a34a;
+        --color-danger: #dc2626;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+      <div class="container mx-auto px-4 py-4">
+        <nav class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <svg
+              class="h-8 w-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 12l8-4-8-4-8 4 8 4zm0 0v8"
+              />
+            </svg>
+            <h1 class="text-xl font-bold text-gray-900">DeslizaAI</h1>
+          </div>
+          <div class="flex space-x-4">
+            <a href="./index.html" class="text-gray-700 hover:text-blue-600"
+              >Home</a
+            >
+            <a href="./mapa.html" class="text-gray-700 hover:text-blue-600"
+              >Mapa de Risco</a
+            >
+            <a href="./alertas.html" class="text-gray-700 hover:text-blue-600"
+              >Alertas</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 px-4 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+          Sistema de Alerta Antecipado para Deslizamentos
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Monitoramento inteligente em tempo real para prevenir desastres
+          naturais e proteger vidas.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="#mapa"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md shadow"
+          >
+            Ver Mapa de Risco
+          </a>
+          <a
+            href="#alertas"
+            class="border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-md shadow text-gray-700"
+          >
+            Verificar Alertas
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-4 bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+          Como Funciona o Sistema
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="border rounded-lg p-6 text-center shadow hover:shadow-md">
+            <div class="text-blue-600 mb-4">
+              <svg
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 4v16h16V4H4zm8 4v8m4-4H8"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Sensores IoT</h3>
+            <p class="text-gray-600">
+              Estações monitoram continuamente a umidade e movimentação do solo
+              em áreas de risco.
+            </p>
+          </div>
+
+          <div class="border rounded-lg p-6 text-center shadow hover:shadow-md">
+            <div class="text-green-600 mb-4">
+              <svg
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10h4v4H3v-4zm14-6h4v4h-4V4zm0 12h4v4h-4v-4zM3 16h4v4H3v-4zm8-8h2v2h-2V8zm0 4h2v6h-2v-6z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Processamento Inteligente
+            </h3>
+            <p class="text-gray-600">
+              Backend processa dados em tempo real e calcula níveis de risco
+              usando algoritmos avançados.
+            </p>
+          </div>
+
+          <div class="border rounded-lg p-6 text-center shadow hover:shadow-md">
+            <div class="text-red-600 mb-4">
+              <svg
+                class="h-12 w-12 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m1-6h-4a2 2 0 00-2 2v4h6v6h4a2 2 0 002-2v-4h-6V4z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Alertas Instantâneos</h3>
+            <p class="text-gray-600">
+              Sistema de notificações via SMS e web para alertar autoridades e
+              populações em risco.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objetivo -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">
+          Objetivo do Sistema
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="border rounded-lg p-6 shadow hover:shadow-md">
+            <h3 class="text-2xl text-blue-600 mb-4 font-semibold">Prevenção</h3>
+            <p class="text-gray-600">
+              Detectar condições que podem levar a deslizamentos antes que
+              ocorram, permitindo evacuações preventivas e ações de segurança.
+            </p>
+          </div>
+          <div class="border rounded-lg p-6 shadow hover:shadow-md">
+            <h3 class="text-2xl text-green-600 mb-4 font-semibold">Proteção</h3>
+            <p class="text-gray-600">
+              Proteger vidas humanas e propriedades através de alertas
+              antecipados e coordenação de equipes de emergência.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eventos Monitorados -->
+    <section class="py-16 px-4 bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+          Eventos Monitorados
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              Parâmetros Físicos
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-blue-500 mr-3"></span>
+                Umidade do solo em diferentes profundidades
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-green-500 mr-3"></span>
+                Movimentação e inclinação do terreno
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-yellow-500 mr-3"></span>
+                Pressão da água no solo
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-red-500 mr-3"></span>
+                Precipitação acumulada
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              Condições Climáticas
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-purple-500 mr-3"></span>
+                Intensidade de chuva em tempo real
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-indigo-500 mr-3"></span>
+                Previsão meteorológica integrada
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-pink-500 mr-3"></span>
+                Temperatura e umidade do ar
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-orange-500 mr-3"></span>
+                Velocidade e direção do vento
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+      <div class="container mx-auto text-center">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 12l8-4-8-4-8 4 8 4zm0 0v8"
+            />
+          </svg>
+          <span class="text-lg font-semibold">SafeSlope</span>
+        </div>
+        <p class="text-gray-400">
+          Sistema de Alerta Antecipado para Deslizamentos - Protegendo
+          comunidades através da tecnologia.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
