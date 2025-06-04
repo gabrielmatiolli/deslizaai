@@ -9,30 +9,78 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@latest"></script>
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style type="text/tailwindcss">
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --font-sans: var('Inter', sans-serif);
+        --color-ring: var(--ring);
+        --color-input: var(--input);
+        --color-border: var(--border);
+        --color-destructive: var(--destructive);
+        --color-accent-foreground: var(--accent-foreground);
+        --color-accent: var(--accent);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-muted: var(--muted);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-secondary: var(--secondary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-primary: var(--primary);
+        --color-popover-foreground: var(--popover-foreground);
+        --color-popover: var(--popover);
+        --color-card-foreground: var(--card-foreground);
+        --color-card: var(--card);
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --radius-xl: calc(var(--radius) + 4px);
+      }
+
+      :root {
+        --radius: 0.625rem;
+        --background: oklch(0.145 0 0);
+        --foreground: oklch(0.985 0 0);
+        --card: oklch(0.205 0 0);
+        --card-foreground: oklch(0.985 0 0);
+        --popover: oklch(0.205 0 0);
+        --popover-foreground: oklch(0.985 0 0);
+        --primary: oklch(0.922 0 0);
+        --primary-foreground: oklch(0.205 0 0);
+        --secondary: oklch(0.269 0 0);
+        --secondary-foreground: oklch(0.985 0 0);
+        --muted: oklch(0.269 0 0);
+        --muted-foreground: oklch(0.708 0 0);
+        --accent: oklch(0.269 0 0);
+        --accent-foreground: oklch(0.985 0 0);
+        --destructive: oklch(0.704 0.191 22.216);
+        --border: oklch(1 0 0 / 10%);
+        --input: oklch(1 0 0 / 15%);
+        --ring: oklch(0.556 0 0);
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
+  <body
+    class="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 font-sans antialiased transition-all"
+  >
     <!-- Header -->
-    <header class="shadow-sm bg-white">
+    <header class="bg-white shadow-sm border-b border-primary">
       <div class="container mx-auto px-4 py-4">
         <nav class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
             <i data-lucide="shield" class="h-8 w-8 text-blue-600"></i>
             <h1 class="text-xl font-bold text-gray-900">SafeSlope</h1>
           </div>
-          <div class="flex lg:space-x-4 space-x-2">
+          <div class="flex space-x-4">
             <a
               href="./index.html"
-              class="text-gray-700 hover:text-blue-600 sm:text-xs lg:text-md"
+              class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               >Home</a
             >
-            <a
-              href="./mapa.html"
-              class="text-gray-700 hover:text-blue-600 sm:text-xs lg:text-md"
+            <a href="./mapa.html" class="px-4 py-2 rounded hover:bg-gray-100"
               >Mapa de Risco</a
             >
-            <a
-              href="./alertas.html"
-              class="text-gray-700 hover:text-blue-600 sm:text-xs lg:text-md"
+            <a href="./alertas.html" class="px-4 py-2 rounded hover:bg-gray-100"
               >Alertas</a
             >
           </div>
@@ -59,7 +107,7 @@
           </a>
           <a
             href="./alertas.html"
-            class="border border-gray-300 hover:bg-gray-100 px-6 py-3 rounded-md shadow text-gray-700 flex justify-center gap-2"
+            class="border border-primary hover:bg-gray-100 px-6 py-3 rounded-md shadow text-gray-700 flex justify-center gap-2"
           >
             <i data-lucide="alert-triangle" className="mr-4 h-5 w-5"></i>
             Verificar Alertas
@@ -75,7 +123,9 @@
           Como Funciona o Sistema
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="rounded-lg p-6 text-center shadow hover:shadow-md">
+          <div
+            class="rounded-lg p-6 text-center shadow hover:shadow-md border border-primary"
+          >
             <div class="text-blue-600 mb-4">
               <i data-lucide="wifi" class="h-12 w-12 mx-auto"></i>
             </div>
@@ -86,7 +136,9 @@
             </p>
           </div>
 
-          <div class="rounded-lg p-6 text-center shadow hover:shadow-md">
+          <div
+            class="rounded-lg p-6 text-center shadow hover:shadow-md border border-primary"
+          >
             <div class="text-green-600 mb-4">
               <i data-lucide="database" class="h-12 w-12 mx-auto"></i>
             </div>
@@ -99,7 +151,9 @@
             </p>
           </div>
 
-          <div class="rounded-lg p-6 text-center shadow hover:shadow-md">
+          <div
+            class="rounded-lg p-6 text-center shadow hover:shadow-md border border-primary"
+          >
             <div class="text-red-600 mb-4">
               <i data-lucide="smartphone" class="h-12 w-12 mx-auto"></i>
             </div>
@@ -120,14 +174,18 @@
           Objetivo do Sistema
         </h2>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="rounded-lg p-6 shadow hover:shadow-md">
+          <div
+            class="rounded-lg p-6 shadow hover:shadow-md border border-primary"
+          >
             <h3 class="text-2xl text-blue-600 mb-4 font-semibold">Prevenção</h3>
             <p class="text-gray-600">
               Detectar condições que podem levar a deslizamentos antes que
               ocorram, permitindo evacuações preventivas e ações de segurança.
             </p>
           </div>
-          <div class="rounded-lg p-6 shadow hover:shadow-md">
+          <div
+            class="rounded-lg p-6 shadow hover:shadow-md border border-primary"
+          >
             <h3 class="text-2xl text-green-600 mb-4 font-semibold">Proteção</h3>
             <p class="text-gray-600">
               Proteger vidas humanas e propriedades através de alertas
@@ -199,19 +257,7 @@
     <footer class="bg-gray-900 text-white py-8 px-4">
       <div class="container mx-auto text-center">
         <div class="flex items-center justify-center space-x-2 mb-4">
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 12l8-4-8-4-8 4 8 4zm0 0v8"
-            />
-          </svg>
+          <i data-lucide="shield" class="h-8 w-8"></i>
           <span class="text-lg font-semibold">SafeSlope</span>
         </div>
         <p class="text-gray-400">
